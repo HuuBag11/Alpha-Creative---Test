@@ -1,0 +1,96 @@
+.header{
+    background-color: $color-black;
+
+    &-wrapper{
+        &__top{
+            padding: 16px 64px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        &__left{
+            
+            img{
+                width: 130px;
+                height: 56px;
+                object-fit: contain;
+            }
+        }
+
+        &__right{
+            gap: 32px;
+        }
+
+        &__translate{
+            ul{
+                list-style: none;
+                gap: 8px;
+                line-height: 150%;
+                color: $gray-color;
+
+                li{
+                    cursor: pointer;
+
+                    &.active{
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        &__form{
+            input{
+                padding: 8px 12px;
+                height: 52px;
+                color: $color-white;
+                background-color: rgba(255, 255, 255, 0.20);
+                border-radius: 4px 0 0 4px;
+                border: none;
+                outline: none;
+                box-shadow: unset;
+                min-width: 380px;
+
+                &::placeholder{
+                    color: $color-neutral;
+                }
+            }
+
+            button{
+                background-color: $primary-color;
+                height: 52px;
+                width: 52px;
+                border-radius: 0 4px 4px 0;
+
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        &__bottom{
+            padding: 12px 64px;
+
+            .menu-list{
+                list-style: none;
+                gap: 32px;
+
+                li{
+                    a{
+                        color: $color-white;
+                        font-weight: bold;
+                        transition: all 0.4s ease;
+                        padding: 10px 0;
+
+                        &:hover{
+                            color : $primary-color;
+                        }
+                    }
+                }
+            }
+
+            .menu-button{
+                gap: 16px;
+            }
+        }
+    }
+}

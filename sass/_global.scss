@@ -1,0 +1,103 @@
+body{
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: $font-primary;
+}
+
+.btn-custom{
+    @include flex(center,center);
+    width: max-content;
+    @include typo($font-primary, 16px, 600, 150%, $color-white);
+    padding: 14px 18px 12px;
+    border-radius: 100px;
+    transition: all 0.4s ease;
+
+    &.btn--secondary{
+        background-color: rgba(255, 255, 255, 0.20);
+
+        &:hover{
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+
+    .btn--primary{
+        background-color: $primary-color;
+        color: $color-white;
+
+        &:hover{
+            background-color: $secondary-color;
+        }
+    }
+}
+
+// animation hover
+.link-hover{
+    position: relative;
+    &::after, 
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 0%;
+        height: 1px;
+        background-color: transparent;
+        transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    &::before{
+        left: 0;
+    }
+
+    &::after{
+        background-color: $color-white;
+        right: 0;
+        transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    &:hover{
+        &::before{
+            width: 100%;
+            background-color: $color-white;
+            transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        &::after{
+            background-color: transparent;
+            width: 100%;
+            transition: 0s;
+        }
+    }
+
+    &.active{
+        &::after, &::before{
+            
+        }
+    }
+}
+
+.section-title{
+    @include typo($font-primary, 48px, 500, 100%, $color-white);
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media (max-width: 768px){
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+}
+
+.section-desc{
+    @include typo($font-primary, 26px, 400, 100%, $color-white);
+    text-align: center;
+
+    @media (max-width: 768px){
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Axiforma", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: "Axiforma", sans-serif;
+}
+
+.btn-custom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  font-family: "Axiforma", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  color: #FFF;
+  padding: 14px 18px 12px;
+  border-radius: 100px;
+  transition: all 0.4s ease;
+}
+.btn-custom.btn--secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-custom.btn--secondary:hover {
+  background-color: #FFF;
+  color: #000;
+}
+.btn-custom .btn--primary {
+  background-color: #B70004;
+  color: #FFF;
+}
+.btn-custom .btn--primary:hover {
+  background-color: #890003;
+}
+
+.link-hover {
+  position: relative;
+}
+.link-hover::after, .link-hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0%;
+  height: 1px;
+  background-color: transparent;
+  transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.link-hover::before {
+  left: 0;
+}
+.link-hover::after {
+  background-color: #FFF;
+  right: 0;
+  transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.link-hover:hover::before {
+  width: 100%;
+  background-color: #FFF;
+  transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.link-hover:hover::after {
+  background-color: transparent;
+  width: 100%;
+  transition: 0s;
+}
+.section-title {
+  font-family: "Axiforma", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #FFF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+}
+
+.section-desc {
+  font-family: "Axiforma", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #FFF;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .section-desc {
+    font-size: 14px;
+  }
+}
+
+.fade-in, .fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+}
+.reveal-text .reveal {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.header {
+  background-color: #000;
+}
+.header-wrapper__top {
+  padding: 16px 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.header-wrapper__left img {
+  width: 130px;
+  height: 56px;
+  object-fit: contain;
+}
+.header-wrapper__right {
+  gap: 32px;
+}
+.header-wrapper__translate ul {
+  list-style: none;
+  gap: 8px;
+  line-height: 150%;
+  color: #444444;
+}
+.header-wrapper__translate ul li {
+  cursor: pointer;
+}
+.header-wrapper__translate ul li.active {
+  color: #FFF;
+}
+.header-wrapper__form input {
+  padding: 8px 12px;
+  height: 52px;
+  color: #FFF;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  box-shadow: unset;
+  min-width: 380px;
+}
+.header-wrapper__form input::placeholder {
+  color: #666666;
+}
+.header-wrapper__form button {
+  background-color: #B70004;
+  height: 52px;
+  width: 52px;
+  border-radius: 0 4px 4px 0;
+}
+.header-wrapper__form button svg {
+  width: 24px;
+  height: 24px;
+}
+.header-wrapper__bottom {
+  padding: 12px 64px;
+}
+.header-wrapper__bottom .menu-list {
+  list-style: none;
+  gap: 32px;
+}
+.header-wrapper__bottom .menu-list li a {
+  color: #FFF;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  padding: 10px 0;
+}
+.header-wrapper__bottom .menu-list li a:hover {
+  color: #B70004;
+}
+.header-wrapper__bottom .menu-button {
+  gap: 16px;
+}
+
+.section-banner {
+  height: calc(100vh - 160px);
+}
+.section-banner .content-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

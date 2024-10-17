@@ -1,0 +1,11 @@
+.section-banner{
+    height: calc(100vh - 160px);
+    
+    .content-wrapper{
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: bottom;
+       width: 100%;
+       height: 100%;
+   }
+}

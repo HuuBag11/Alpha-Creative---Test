@@ -1,0 +1,14 @@
+.fade-in, .fade-in-left, .fade-in-right, .fade-in-up, .fade-in-down {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.reveal-text {
+    position: relative;
+    overflow: hidden;
+    
+    .reveal {
+        display: inline-block;
+        transform: translateY(100%);
+    }
+}

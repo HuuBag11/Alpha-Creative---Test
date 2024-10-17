@@ -2,6 +2,7 @@ body{
     font-family: $font-primary;
     font-size: 16px;
     line-height: 150%;
+    scroll-behavior: smooth;
 }
 
 button {
@@ -9,6 +10,22 @@ button {
     border: none;
     outline: none;
     font-family: $font-primary;
+}
+
+.section-wrapper{
+    padding: 96px 64px;
+
+    @media (max-width: 768px){
+        padding: 20px;
+    }
+}
+
+.section-title{
+    @include typo($font-primary, 40px, 700, 120%, $color-black);
+
+    span{
+        color: $primary-color;
+    }
 }
 
 .btn-custom{
@@ -28,12 +45,22 @@ button {
         }
     }
 
-    .btn--primary{
+    &.btn--primary{
         background-color: $primary-color;
         color: $color-white;
 
         &:hover{
             background-color: $secondary-color;
+        }
+    }
+
+    &.btn--third{
+        color: $color-black;
+        border: 1px solid $color-gray-lighter;
+
+        &:hover{
+            color: $color-white;
+            background-color: $color-black;
         }
     }
 }
@@ -79,17 +106,6 @@ button {
         &::after, &::before{
             
         }
-    }
-}
-
-.section-title{
-    @include typo($font-primary, 48px, 500, 100%, $color-white);
-    margin-bottom: 20px;
-    text-align: center;
-
-    @media (max-width: 768px){
-        font-size: 32px;
-        margin-bottom: 15px;
     }
 }
 

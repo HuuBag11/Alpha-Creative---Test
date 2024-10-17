@@ -1,0 +1,38 @@
+.section-portfolio{
+    background-color: $color-earthy;
+    
+    .title{
+        @include typo($font-primary, 40px, 700, 120%, $color-black);
+        margin-bottom: 120px;
+        max-width: 45%;
+
+        @media (max-width: 768px){
+            margin-bottom: 20px;
+        }
+
+        span{
+            color: $primary-color;
+        }
+    }
+
+    &__number{
+        list-style: none;
+
+        .number__item{
+            padding-left: 32px;
+
+            .number{
+                font-size: 120px;
+                line-height: 130%;
+                color: $primary-color;
+            }
+
+            .text{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 140%;
+                color: $gray-color;
+            }
+        }
+    }
+}

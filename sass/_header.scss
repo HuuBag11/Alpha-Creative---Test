@@ -1,5 +1,15 @@
 .header{
     background-color: $color-black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: ease 0.5s;
+
+    &~.plank-spacing{
+        height: 163px;
+        background-color: $color-black;
+    }
 
     &-wrapper{
         &__top{

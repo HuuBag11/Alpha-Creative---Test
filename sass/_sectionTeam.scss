@@ -1,0 +1,57 @@
+.section-team{
+    background-color: $color-earthy;
+    .section-title{
+        max-width: 50%;
+        margin: 0 auto 80px;
+    }
+
+    .team__item{
+        .item{
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+
+            &-image{
+                width: 100%;
+                aspect-ratio: 310 / 407;
+            }
+
+            &-content{
+                padding: 24px 0;
+                background-color: $gray-color;
+                position: absolute;
+                transform: translateY(100%);
+                transition: all 0.4s ease;
+                bottom: 0;
+                width: 100%;
+                left: 0;
+            }
+
+            &-name{
+                @include typo($font-primary,20px,600,150%,$color-white);
+            }
+
+            &-name{
+                @include typo($font-primary,16px,400,150%,#AAAAAA);
+            }
+
+            &:hover{
+                .item-content{
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+
+    &__list{
+        list-style: none;
+    }
+
+    &__cta{
+        margin-top: 64px;
+
+        a{
+            margin: 0 auto;
+        }
+    }
+}

@@ -402,7 +402,9 @@ button {
   overflow: hidden;
 }
 .section-blog .blog__item .item:hover .item-image img {
-  transform: scale(1.05);
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(0) rotate(0) skewX(0) skewY(0) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .section-blog .blog__item .item:hover .item-title {
   text-decoration: underline;
@@ -424,8 +426,10 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s ease;
-  transform: scale(1);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 0.5s;
 }
 .section-blog .blog__item .item-info {
   padding: 24px;

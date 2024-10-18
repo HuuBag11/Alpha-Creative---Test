@@ -1,4 +1,10 @@
 .section-info{
+    .section-wrapper{
+        @media (max-width:768px){
+            flex-direction: column;
+        }
+    }
+    
     &__image{
         width: 55%;
         aspect-ratio: 697 / 608;

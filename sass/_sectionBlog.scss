@@ -12,8 +12,13 @@
         }
     }
 
+    &__list{
+        margin: 0 -16px;
+    }
+
     .blog__item{
         list-style: none;
+        padding: 0 16px;
         
         .item{
             border-radius: 8px;

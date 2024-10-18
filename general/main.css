@@ -83,7 +83,7 @@ button {
   font-weight: 600;
   line-height: 150%;
   color: #FFF;
-  padding: 14px 18px 12px;
+  padding: 12px 18px 10px;
   border-radius: 100px;
   transition: all 0.4s ease;
 }
@@ -229,6 +229,7 @@ button {
   border-radius: 0 4px 4px 0;
   overflow: hidden;
   transition: all 0.4s ease;
+  margin-left: 4px;
 }
 .header-wrapper__form button:hover {
   background-color: #890003;
@@ -351,7 +352,7 @@ button {
   line-height: 120%;
   color: #000;
   margin-bottom: 120px;
-  max-width: 45%;
+  max-width: 60%;
 }
 @media (max-width: 768px) {
   .section-portfolio .title {
@@ -389,8 +390,12 @@ button {
 .section-blog__cta a {
   margin: 0 auto;
 }
+.section-blog__list {
+  margin: 0 -16px;
+}
 .section-blog .blog__item {
   list-style: none;
+  padding: 0 16px;
 }
 .section-blog .blog__item .item {
   border-radius: 8px;
@@ -447,7 +452,7 @@ button {
   background-color: #F1EEE8;
 }
 .section-team .section-title {
-  max-width: 50%;
+  max-width: 55%;
   margin: 0 auto 80px;
 }
 .section-team .team__item .item {
@@ -496,6 +501,11 @@ button {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .section-info .section-wrapper {
+    flex-direction: column;
+  }
+}
 .section-info__image {
   width: 55%;
   aspect-ratio: 697/608;
@@ -549,11 +559,15 @@ button {
   font-weight: 700;
   line-height: 120%;
   color: #FFF;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
+  max-width: 55%;
 }
 
 .footer {
   background-color: #F1EEE8;
+}
+.footer .section-wrapper {
+  padding: 80px 64px;
 }
 .footer-logo {
   width: 130px;
@@ -592,6 +606,7 @@ button {
 .footer-menu .menu {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
   list-style: none;
 }
 .footer-menu .menu span {
@@ -606,7 +621,7 @@ button {
 .footer-menu .menu ul {
   list-style: none;
 }
-.footer-menu .menu ul li {
+.footer-menu .menu ul li:not(:last-child) {
   margin-bottom: 12px;
 }
 .footer-menu .menu ul a {
@@ -633,6 +648,9 @@ button {
 }
 .footer-social ul a:hover svg path {
   fill: #000;
+}
+.footer-contact {
+  margin-top: 40px;
 }
 .footer-contact .title {
   font-family: "Axiforma", sans-serif;
@@ -692,6 +710,9 @@ button {
 }
 .footer-contact span a:hover {
   color: #B70004;
+}
+.footer-top__right {
+  padding-left: 52px;
 }
 .footer-bottom {
   padding-top: 32px;

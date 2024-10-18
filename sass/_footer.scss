@@ -1,6 +1,10 @@
 .footer{
     background-color: $color-earthy;
 
+    .section-wrapper{
+        padding: 80px 64px;
+    }
+
     &-logo{
         width: 130px;
         height: 40px;
@@ -40,6 +44,7 @@
         .menu{
             display: grid;
             grid-template-columns: repeat(4,1fr);
+            column-gap: 24px;
             list-style: none;
 
             span{
@@ -52,7 +57,9 @@
                 list-style: none;
                 
                 li{
-                    margin-bottom: 12px;
+                    &:not(:last-child){
+                        margin-bottom: 12px;
+                    }
                 }
                 
                 a{
@@ -79,7 +86,7 @@
                 svg{
                     transition: all 0.4s ease;
                 }
-                
+
                 &:hover{
                     svg{
                         path{
@@ -92,6 +99,8 @@
     }
 
     &-contact{
+        margin-top: 40px;
+
         .title{
             @include typo($font-primary,16px,600,150%,$gray-color);
             margin-bottom: 16px;
@@ -148,6 +157,12 @@
                     color: $primary-color;
                 }
             }
+        }
+    }
+
+    &-top{
+        &__right{
+            padding-left: 52px;
         }
     }
 

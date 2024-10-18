@@ -4,7 +4,7 @@
     .title{
         @include typo($font-primary, 40px, 700, 120%, $color-black);
         margin-bottom: 120px;
-        max-width: 45%;
+        max-width: 60%;
 
         @media (max-width: 768px){
             margin-bottom: 20px;

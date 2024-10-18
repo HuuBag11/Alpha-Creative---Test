@@ -103,7 +103,7 @@ if (fadeInUp) {
             autoAlpha    : 1,
             y            : "-=30",
             ease         : "power1.inOut",
-            duration     : 1.5,
+            duration     : 1,
             delay        : $delay,
             scrollTrigger: {
                 trigger      : value,

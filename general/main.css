@@ -639,7 +639,7 @@ button {
   column-gap: 24px;
   list-style: none;
 }
-.footer-menu .menu span {
+.footer-menu .menu .menu-item > a {
   font-family: "Axiforma", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -647,6 +647,10 @@ button {
   color: #666666;
   margin-bottom: 12px;
   display: block;
+  transition: all 0.4s ease;
+}
+.footer-menu .menu .menu-item > a:hover {
+  color: #B70004;
 }
 .footer-menu .menu ul {
   list-style: none;

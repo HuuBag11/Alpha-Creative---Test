@@ -49,10 +49,17 @@
             column-gap: 24px;
             list-style: none;
 
-            span{
-                @include typo($font-primary, 16px,600,150%,$color-neutral);
-                margin-bottom: 12px;
-                display: block;
+            .menu-item{
+                & > a{
+                    @include typo($font-primary, 16px,600,150%,$color-neutral);
+                    margin-bottom: 12px;
+                    display: block;
+                    transition: all 0.4s ease;
+
+                    &:hover{
+                        color: $primary-color;
+                    }
+                }
             }
             
             ul{

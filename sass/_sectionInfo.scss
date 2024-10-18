@@ -1,4 +1,9 @@
 .section-info{
+    background-image: url("../assets/bg-info.png");
+    background-size: 100% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
     .section-wrapper{
         @media (max-width:768px){
             flex-direction: column;

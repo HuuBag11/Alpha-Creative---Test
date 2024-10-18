@@ -39,6 +39,11 @@
 
                 li{
                     cursor: pointer;
+                    transition: all 0.4s ease;
+
+                    &:hover{
+                        color: $color-white;
+                    }
 
                     &.active{
                         color: $color-white;
@@ -50,7 +55,7 @@
         &__form{
             input{
                 padding: 8px 12px;
-                height: 52px;
+                height: 40px;
                 color: $color-white;
                 background-color: rgba(255, 255, 255, 0.20);
                 border-radius: 4px 0 0 4px;
@@ -66,9 +71,15 @@
 
             button{
                 background-color: $primary-color;
-                height: 52px;
-                width: 52px;
+                height: 40px;
+                width: 40px;
                 border-radius: 0 4px 4px 0;
+                overflow: hidden;
+                transition: all 0.4s ease;
+
+                &:hover{
+                    background-color: $secondary-color;
+                }
 
                 svg{
                     width: 24px;
@@ -85,6 +96,12 @@
                 gap: 32px;
 
                 li{
+                    &.active{
+                        a{
+                            color: $primary-color;
+                        }
+                    }
+                    
                     a{
                         color: $color-white;
                         font-weight: bold;

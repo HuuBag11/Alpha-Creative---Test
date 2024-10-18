@@ -77,8 +77,85 @@
         }
     }
 
+    &-contact{
+        .title{
+            @include typo($font-primary,16px,600,150%,$gray-color);
+            margin-bottom: 16px;
+        }
+
+        form{
+            input{
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: $color-white;
+                @include typo($font-primary,16px, 400,150%,$color-black);
+                outline: none;
+                box-shadow: unset;
+                border: none;
+                padding: 12px;
+                height: 40px;
+                min-width: 348px;
+
+                &::placeholder{
+                    color: $color-neutral;
+                }
+            }
+
+            button{
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: $primary-color;
+                width: 40px;
+                height: 40px;
+                transition: all 0.4s ease;
+
+                &:hover{
+                    background-color: $secondary-color;
+                }
+
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        span{
+            display: block;
+            margin-top: 16px;
+            @include typo($font-primary,12px,400,150%,$gray-color);
+
+            a{
+                text-decoration: underline;
+                color: $color-black;
+                transition: all 0.4s ease;
+
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
     &-bottom{
         padding-top: 32px;
         border-top: 1px solid #AAA;
+        margin-top: 80px;
+
+        ul{
+            list-style: none;
+            gap: 24px;
+            
+            a{
+                @include typo($font-primary, 14px,400,150%,$color-black);
+                text-decoration: none;
+                text-decoration: underline;
+                transition: all 0.4s ease;
+
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+        }
     }
 }

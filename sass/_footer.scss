@@ -115,8 +115,8 @@
                 outline: none;
                 box-shadow: unset;
                 border: none;
-                padding: 12px;
-                height: 40px;
+                padding: 12px 12px 10px;
+                height: 48px;
                 min-width: 348px;
 
                 &::placeholder{
@@ -128,8 +128,8 @@
                 border-radius: 4px;
                 overflow: hidden;
                 background-color: $primary-color;
-                width: 40px;
-                height: 40px;
+                width: 48px;
+                height: 48px;
                 transition: all 0.4s ease;
 
                 &:hover{
@@ -137,8 +137,8 @@
                 }
 
                 svg{
-                    width: 24px;
-                    height: 24px;
+                    width: 18px;
+                    height: 18px;
                 }
             }
         }

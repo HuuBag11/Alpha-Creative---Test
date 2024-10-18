@@ -159,6 +159,14 @@ button {
   visibility: hidden;
 }
 
+.fade-up {
+  transform: translateY(30px);
+  transition: transform 0.3s ease;
+}
+.fade-up.active {
+  transform: translateY(0);
+}
+
 .reveal-text {
   position: relative;
   overflow: hidden;
@@ -235,8 +243,8 @@ button {
   background-color: #890003;
 }
 .header-wrapper__form button svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 .header-wrapper__bottom {
   padding: 12px 64px;
@@ -676,8 +684,8 @@ button {
   outline: none;
   box-shadow: unset;
   border: none;
-  padding: 12px;
-  height: 40px;
+  padding: 12px 12px 10px;
+  height: 48px;
   min-width: 348px;
 }
 .footer-contact form input::placeholder {
@@ -687,16 +695,16 @@ button {
   border-radius: 4px;
   overflow: hidden;
   background-color: #B70004;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   transition: all 0.4s ease;
 }
 .footer-contact form button:hover {
   background-color: #890003;
 }
 .footer-contact form button svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 .footer-contact span {
   display: block;

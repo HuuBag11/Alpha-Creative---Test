@@ -114,6 +114,28 @@ if (fadeInUp) {
     })
 }
 
+const fadeUp = document.querySelectorAll(".fade-up");
+if (fadeUp) {
+    fadeUp.forEach(value => {
+        const $delay = value.getAttribute("data-delay") ? value.getAttribute("data-delay") : 0;
+
+        gsap.fromTo(value, {
+            y: "+=30",
+        }, {
+            y: "0",
+            ease: "power1.inOut",
+            duration: 1,
+            delay: $delay,
+            scrollTrigger: {
+                trigger: value,
+                start: "top 90%",
+                toggleActions: "play none none none",
+                onEnter: () => value.classList.add('active'),
+            }
+        });
+    });
+}
+
 const revealTexts = document.querySelectorAll(".reveal-text")
 if (revealTexts) {
     revealTexts.forEach(value => {

@@ -3,6 +3,15 @@
     visibility: hidden;
 }
 
+.fade-up{
+    transform: translateY(30px);
+    transition: transform 0.3s ease;
+
+    &.active{
+        transform: translateY(0);
+    }
+}
+
 .reveal-text {
     position: relative;
     overflow: hidden;

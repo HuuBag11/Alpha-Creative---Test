@@ -74,6 +74,20 @@
         ul{
             list-style: none;
             gap: 24px;
+
+            a{
+                svg{
+                    transition: all 0.4s ease;
+                }
+                
+                &:hover{
+                    svg{
+                        path{
+                            fill: $color-black;
+                        }
+                    }
+                }
+            }
         }
     }
 

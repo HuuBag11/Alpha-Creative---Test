@@ -31,7 +31,7 @@
                 @include typo($font-primary,20px,600,150%,$color-white);
             }
 
-            &-name{
+            &-info{
                 @include typo($font-primary,16px,400,150%,#AAAAAA);
             }
 

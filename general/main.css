@@ -476,7 +476,7 @@ button {
   line-height: 150%;
   color: #FFF;
 }
-.section-team .team__item .item-name {
+.section-team .team__item .item-info {
   font-family: "Axiforma", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -627,6 +627,12 @@ button {
 .footer-social ul {
   list-style: none;
   gap: 24px;
+}
+.footer-social ul a svg {
+  transition: all 0.4s ease;
+}
+.footer-social ul a:hover svg path {
+  fill: #000;
 }
 .footer-contact .title {
   font-family: "Axiforma", sans-serif;

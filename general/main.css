@@ -283,6 +283,11 @@ button {
   transition: opacity 0.8s ease-in-out;
   opacity: 0;
 }
+@media (max-width: 1200px) {
+  .section-banner .content-wrapper__content {
+    max-width: 55%;
+  }
+}
 .section-banner .content-wrapper__background {
   position: relative;
 }
@@ -594,7 +599,7 @@ button {
 }
 .footer-logo {
   width: 130px;
-  height: 40px;
+  padding: 8px 0;
 }
 .footer-info {
   margin-top: 40px;
@@ -608,6 +613,8 @@ button {
   font-weight: 600;
   line-height: 150%;
   color: #444444;
+  margin-bottom: 4px;
+  display: block;
 }
 .footer-info__item ul {
   padding-left: 0;

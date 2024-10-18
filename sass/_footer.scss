@@ -7,7 +7,7 @@
 
     &-logo{
         width: 130px;
-        height: 40px;
+        padding: 8px 0;
     }
 
     &-info{
@@ -20,6 +20,8 @@
 
             span{
                 @include typo($font-primary,16px,600,150%,$gray-color);
+                margin-bottom: 4px;
+                display: block;
             }
 
             ul{

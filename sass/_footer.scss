@@ -3,6 +3,10 @@
 
     .section-wrapper{
         padding: 80px 64px;
+
+        @media (max-width: 768px){
+            padding: 64px 20px;
+        }
     }
 
     &-logo{
@@ -170,8 +174,16 @@
     }
 
     &-top{
+        @media (max-width: 992px){
+            row-gap: 24px;
+        }
+
         &__right{
             padding-left: 52px;
+
+            @media (max-width: 992px){
+                padding-left: 15px;
+            }
         }
     }
 

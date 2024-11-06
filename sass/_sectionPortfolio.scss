@@ -6,6 +6,10 @@
         margin-bottom: 120px;
         max-width: 60%;
 
+        @media (max-width: 992px){
+            max-width: 80%;
+        }
+
         @media (max-width: 768px){
             margin-bottom: 20px;
         }
@@ -17,6 +21,7 @@
 
     &__number{
         list-style: none;
+        row-gap: 32px;
 
         .number__item{
             padding-left: 32px;

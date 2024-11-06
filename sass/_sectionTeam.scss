@@ -3,6 +3,10 @@
     .section-title{
         max-width: 55%;
         margin: 0 auto 80px;
+
+        @media (max-width: 992px){
+            max-width: 80%;
+        }
     }
 
     .team__item{
@@ -45,6 +49,7 @@
 
     &__list{
         list-style: none;
+        row-gap: 30px;
     }
 
     &__cta{

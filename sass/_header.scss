@@ -15,6 +15,10 @@
         &__top{
             padding: 16px 64px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            @media (max-width: 768px){
+                padding: 15px 20px;
+            }
         }
 
         &__left{
@@ -62,7 +66,11 @@
                 border: none;
                 outline: none;
                 box-shadow: unset;
-                min-width: 380px;
+                min-width: 340px;
+
+                @media (max-width: 992px){
+                    min-width: 280px;
+                }
 
                 &::placeholder{
                     color: $color-neutral;
@@ -90,6 +98,10 @@
 
         &__bottom{
             padding: 12px 64px;
+
+            @media (max-width: 768px){
+                padding: 10px 20px;
+            }
 
             .menu-list{
                 list-style: none;

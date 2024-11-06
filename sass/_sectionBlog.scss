@@ -7,6 +7,10 @@
     .section-title{
         max-width: 50%;
         margin: 0 auto 80px;
+
+        @media (max-width: 992px){
+            max-width: 80%;
+        }
     }
 
     &__cta{
@@ -19,6 +23,7 @@
 
     &__list{
         margin: 0 -16px;
+        row-gap: 32px;
     }
 
     .blog__item{

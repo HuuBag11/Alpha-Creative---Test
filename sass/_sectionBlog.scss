@@ -11,6 +11,11 @@
         @media (max-width: 992px){
             max-width: 80%;
         }
+
+        @media (max-width: 768px){
+            max-width: 100%;
+            margin-bottom: 48px;
+        }
     }
 
     &__cta{

@@ -57,6 +57,11 @@
             column-gap: 24px;
             list-style: none;
 
+            @media (max-width: 768px){
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 24px;
+            }
+
             .menu-item{
                 & > a{
                     @include typo($font-primary, 16px,600,150%,$color-neutral);

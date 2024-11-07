@@ -7,6 +7,11 @@
         @media (max-width: 992px){
             max-width: 80%;
         }
+
+        @media (max-width: 768px){
+            max-width: 100%;
+            margin-bottom: 48px;
+        }
     }
 
     .team__item{
@@ -29,6 +34,10 @@
                 bottom: 0;
                 width: 100%;
                 left: 0;
+
+                @media (max-width: 768px){
+                    transform: translate(0);
+                }
             }
 
             &-name{
@@ -50,6 +59,10 @@
     &__list{
         list-style: none;
         row-gap: 30px;
+
+        @media (max-width: 768px){
+            justify-content: flex-start !important;
+        }
     }
 
     &__cta{

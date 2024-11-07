@@ -191,3 +191,15 @@ function activeNavLink() {
     });
 });
 }
+
+function togglePopupHeader(event){
+  event.preventDefault();
+
+  let btnHamburger = $("header .header-wrapper__hambuger");
+  btnHamburger.toggleClass("is-active");
+
+  $("body").toggleClass("overflow-hidden");
+
+  let menuMobile = $("header .header-wrapper__bottom");
+  menuMobile.toggleClass("show");
+}

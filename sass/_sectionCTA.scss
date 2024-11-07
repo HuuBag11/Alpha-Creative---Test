@@ -17,6 +17,10 @@
     .section-wrapper{
         position: relative;
         z-index: 1;
+
+        @media (max-width: 768px){
+            padding: 98px 20px;
+        }
     }
 
     .title{
@@ -26,6 +30,12 @@
 
         @media (max-width: 992px){
             max-width: 80%;
+        }
+
+        @media (max-width: 768px){
+            font-size: 40px;
+            max-width: 100%;
+            margin-bottom: 60px;
         }
     }
 }

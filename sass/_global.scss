@@ -23,6 +23,10 @@ button {
 .section-title{
     @include typo($font-primary, 40px, 700, 120%, $color-black);
 
+    @media (max-width: 768px){
+        font-size: 32px;
+    }
+
     span{
         color: $primary-color;
     }

@@ -195,6 +195,15 @@ button {
 @media (max-width: 768px) {
   .header-wrapper__top {
     padding: 15px 20px;
+    position: relative;
+  }
+}
+@media (max-width: 768px) {
+  .header-wrapper__left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .header-wrapper__left img {
@@ -289,7 +298,7 @@ button {
   position: relative;
 }
 .section-banner .content-wrapper__content {
-  max-width: 50%;
+  max-width: 44%;
   position: absolute;
   top: 50%;
   left: 64px;
@@ -416,6 +425,29 @@ button {
   font-size: 120px;
   line-height: 130%;
   color: #B70004;
+  height: 156px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+.section-portfolio__number .number__item .number > span {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 2s ease;
+  transform: translateY(0);
+  line-height: 1;
+}
+.section-portfolio__number .number__item .number > span span {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.section-portfolio__number .number__item .number:nth-child(1) > span {
+  transition-delay: 0s;
+}
+.section-portfolio__number .number__item .number:nth-child(2) > span {
+  transition-delay: 0.2s;
 }
 .section-portfolio__number .number__item .text {
   font-size: 24px;
@@ -426,7 +458,7 @@ button {
 
 .section-blog {
   background-image: url("../assets/bg-blog.png");
-  background-size: 70% auto;
+  background-size: 85% auto;
   background-position: bottom left;
   background-repeat: no-repeat;
 }
@@ -463,7 +495,7 @@ button {
   transform: translate(0) rotate(0) skewX(0) skewY(0) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .section-blog .blog__item .item:hover .item-title {
-  text-decoration: underline;
+  color: #B70004;
 }
 .section-blog .blog__item .item-tag {
   padding: 24px;
@@ -499,6 +531,7 @@ button {
   display: block;
   margin-bottom: 16px;
   transition: all 0.4s ease;
+  position: relative;
 }
 .section-blog .blog__item .item-desc {
   font-family: "Axiforma", sans-serif;
@@ -700,6 +733,9 @@ button {
   text-decoration: underline;
   transition: all 0.4s ease;
   color: #444444;
+}
+.footer-info__item ul a.tel {
+  text-decoration: none;
 }
 .footer-info__item ul a:hover {
   color: #B70004;

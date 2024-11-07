@@ -1,6 +1,6 @@
 .section-blog{
     background-image: url("../assets/bg-blog.png");
-    background-size: 70% auto;
+    background-size: 85% auto;
     background-position: bottom left;
     background-repeat: no-repeat;
 
@@ -42,7 +42,7 @@
                 }
 
                 .item-title{
-                    text-decoration: underline;
+                    color: $primary-color;
                 }
             }
 
@@ -76,6 +76,7 @@
                 display: block;
                 margin-bottom: 16px;
                 transition: all 0.4s ease;
+                position: relative;
             }
 
             &-desc{

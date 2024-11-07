@@ -38,6 +38,10 @@
                     transition: all 0.4s ease;
                     color: $gray-color;
 
+                    &.tel{
+                        text-decoration: none;
+                    }
+
                     &:hover{
                         color: $primary-color;
                     }

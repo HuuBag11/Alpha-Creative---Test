@@ -4,7 +4,7 @@ $ = jQuery;
 $(document).ready(function () {
   slideBanner();
   scrollHeader();
-  $(window).on("scroll", counterOnScroll);
+  counterOnScroll();
   activeNavLink();
 });
 
@@ -18,7 +18,7 @@ function slideBanner() {
       interval: 6000,
       arrows: false,
       paginations: false,
-      autoplay: true,
+      autoplay: false,
       speed: 2000,
       pauseOnHover: true,
       pauseonFocus: true
@@ -56,37 +56,69 @@ function scrollHeader() {
   });
 }
 
-var counted = 0;
-function counterOnScroll() {
-  var oTop = $(".section-portfolio").offset().top - window.innerHeight;
-  if (counted == 0 && $(window).scrollTop() > oTop) {
-    $(".section-portfolio .number").each(function () {
-      var $this = $(this),
-        countTo = $this.attr("data-count");
-        
-      $({
-        countNum: $this.text()
-      }).animate(
-        {
-          countNum: countTo
-        },
-
-        {
-          duration: 2000,
-          easing: "swing",
-          step: function () {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function () {     
-            $this.text($this.attr("data-count"));
-            //alert('finished');
-          }
+function counterOnScroll(){
+  $(".number").each(function() {
+    const $stat = $(this);
+    const patt = /(\D+)?(\d+(\.\d+)?)(\D+)?/;
+    const time = 0;
+    let result = patt.exec($stat.text());
+    let fresh = true;
+    let ticks;
+  
+    if (!result) return;
+  
+    result.shift();
+    result = result.filter(res => res != null);
+  
+    $stat.empty();
+  
+    result.forEach((res) => {
+      if (isNaN(res)) {
+        $stat.append(`<span>${res}</span>`);
+      } else {
+        for (let i = 0; i < res.length; i++) {
+          $stat.append(`
+            <span data-value="${res[i]}">
+              <span>&nbsp;</span>
+              ${Array(parseInt(res[i]) + 1)
+                .join(0)
+                .split(0)
+                .map((x, j) => `<span>${j}</span>`)
+                .join("")}
+            </span>
+          `);
         }
-      );
+      }
     });
-    counted = 1;
-  }
-};
+  
+    ticks = $stat.find("span[data-value]");
+  
+    const activate = () => {
+      const top = $stat[0].getBoundingClientRect().top;
+      const offset = $(window).height() * 0.9;
+  
+      setTimeout(() => {
+        fresh = false;
+      }, time);
+  
+      if (top < offset) {
+        setTimeout(
+          () => {
+            ticks.each(function() {
+              const dist = parseInt($(this).attr("data-value")) + 1;
+              $(this).css("transform", `translateY(-${dist * 100}%)`);
+            });
+          },
+          fresh ? time : 0
+        );
+        $(window).off("scroll", activate);
+      }
+    };
+    
+    $(window).on("scroll", activate);
+    activate();
+  });
+}
 
 function activeNavLink() {
   let sections = document.querySelectorAll('section');

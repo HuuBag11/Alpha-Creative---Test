@@ -18,7 +18,7 @@ function slideBanner() {
       interval: 6000,
       arrows: false,
       paginations: false,
-      autoplay: false,
+      autoplay: true,
       speed: 2000,
       pauseOnHover: true,
       pauseonFocus: true

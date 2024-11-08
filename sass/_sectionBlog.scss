@@ -4,6 +4,10 @@
     background-position: bottom left;
     background-repeat: no-repeat;
 
+    @media (max-width: 768px){
+        background-size: 300% auto;
+    }
+
     .section-title{
         max-width: 50%;
         margin: 0 auto 80px;

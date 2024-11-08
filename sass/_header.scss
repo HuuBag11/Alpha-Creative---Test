@@ -74,13 +74,49 @@
                     &.active{
                         color: $color-white;
                     }
+
+                    @media (max-width: 768px){
+                        display: none;
+
+                        &.active{
+                            display: block;
+                        }
+                    }
                 }
             }
         }
 
         &__form{
+            display: none;
+            &.mobile{
+                display: none;
+            }
+            
+            @media (min-width: 769px){
+                display: block;
+            }
+
             @media (max-width: 768px){
                 margin-top: 32px;
+                width: 100%;
+
+                &.mobile{
+                    display: block;
+                    width: 80%;
+                }
+            }
+
+            @media (max-width: 480px){
+                &.mobile{
+                    width: 100%;
+                }
+            }
+
+            form{
+                @media (max-width: 768px){
+                    width: 100%;
+                    display: flex;
+                }
             }
 
             input{
@@ -96,6 +132,10 @@
 
                 @media (max-width: 992px){
                     min-width: 280px;
+                }
+
+                @media (max-width: 768px){
+                    width: calc(100% - 40px);
                 }
 
                 &::placeholder{
@@ -123,6 +163,10 @@
         }
 
         &__hambuger{
+            display: block;
+            @media (min-width: 769px){
+                display: none;
+            }
             &.btn-toggle{
                 cursor: pointer;
                 padding: 0;

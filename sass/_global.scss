@@ -3,6 +3,12 @@ body{
     font-size: 16px;
     line-height: 150%;
     scroll-behavior: smooth;
+
+    &.overflow-hidden{
+        header{
+            transform: translate(0) !important;
+        }
+    }
 }
 
 button {

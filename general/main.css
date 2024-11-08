@@ -44,6 +44,9 @@ body {
   line-height: 150%;
   scroll-behavior: smooth;
 }
+body.overflow-hidden header {
+  transform: translate(0) !important;
+}
 
 button {
   cursor: pointer;
@@ -253,8 +256,43 @@ button {
   color: #FFF;
 }
 @media (max-width: 768px) {
+  .header-wrapper__translate ul li {
+    display: none;
+  }
+  .header-wrapper__translate ul li.active {
+    display: block;
+  }
+}
+.header-wrapper__form {
+  display: none;
+}
+.header-wrapper__form.mobile {
+  display: none;
+}
+@media (min-width: 769px) {
+  .header-wrapper__form {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
   .header-wrapper__form {
     margin-top: 32px;
+    width: 100%;
+  }
+  .header-wrapper__form.mobile {
+    display: block;
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .header-wrapper__form.mobile {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .header-wrapper__form form {
+    width: 100%;
+    display: flex;
   }
 }
 .header-wrapper__form input {
@@ -271,6 +309,11 @@ button {
 @media (max-width: 992px) {
   .header-wrapper__form input {
     min-width: 280px;
+  }
+}
+@media (max-width: 768px) {
+  .header-wrapper__form input {
+    width: calc(100% - 40px);
   }
 }
 .header-wrapper__form input::placeholder {
@@ -290,6 +333,14 @@ button {
 .header-wrapper__form button svg {
   width: 18px;
   height: 18px;
+}
+.header-wrapper__hambuger {
+  display: block;
+}
+@media (min-width: 769px) {
+  .header-wrapper__hambuger {
+    display: none;
+  }
 }
 .header-wrapper__hambuger.btn-toggle {
   cursor: pointer;
@@ -575,6 +626,11 @@ button {
   background-position: bottom left;
   background-repeat: no-repeat;
 }
+@media (max-width: 768px) {
+  .section-blog {
+    background-size: 300% auto;
+  }
+}
 .section-blog .section-title {
   max-width: 50%;
   margin: 0 auto 80px;
@@ -764,6 +820,11 @@ button {
     max-height: 330px;
   }
 }
+@media (max-width: 480px) {
+  .section-info__image {
+    aspect-ratio: 335/292;
+  }
+}
 .section-info__image img {
   width: 100%;
   height: 100%;
@@ -857,8 +918,18 @@ button {
   width: 130px;
   padding: 8px 0;
 }
+@media (max-width: 768px) {
+  .footer-logo {
+    padding: 0;
+  }
+}
 .footer-info {
   margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .footer-info {
+    margin-top: 32px;
+  }
 }
 .footer-info__item:not(:last-child) {
   margin-bottom: 24px;
@@ -901,7 +972,12 @@ button {
 @media (max-width: 768px) {
   .footer-menu .menu {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 24px;
+    row-gap: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .footer-menu .menu {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .footer-menu .menu .menu-item > a {
@@ -945,6 +1021,12 @@ button {
 .footer-social ul a svg {
   transition: all 0.4s ease;
 }
+@media (max-width: 480px) {
+  .footer-social ul a svg {
+    width: 33px;
+    height: 33px;
+  }
+}
 .footer-social ul a:hover svg path {
   fill: #000;
 }
@@ -958,6 +1040,18 @@ button {
   line-height: 150%;
   color: #444444;
   margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .footer-contact form {
+    display: flex;
+    width: 80%;
+    gap: 4px;
+  }
+}
+@media (max-width: 480px) {
+  .footer-contact form {
+    width: 100%;
+  }
 }
 .footer-contact form input {
   border-radius: 4px;
@@ -974,6 +1068,12 @@ button {
   padding: 12px 12px 10px;
   height: 48px;
   min-width: 348px;
+}
+@media (max-width: 768px) {
+  .footer-contact form input {
+    width: calc(100% - 44px);
+    min-width: unset;
+  }
 }
 .footer-contact form input::placeholder {
   color: #666666;
@@ -1015,6 +1115,11 @@ button {
     row-gap: 24px;
   }
 }
+@media (max-width: 768px) {
+  .footer-top {
+    row-gap: 40px;
+  }
+}
 .footer-top__right {
   padding-left: 52px;
 }
@@ -1028,9 +1133,32 @@ button {
   border-top: 1px solid #AAA;
   margin-top: 80px;
 }
+@media (max-width: 480px) {
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 40px;
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
+  }
+}
+@media (max-width: 480px) {
+  .footer-bottom .copyright {
+    margin-top: 32px;
+    color: #444444;
+    font-size: 14px;
+  }
+}
 .footer-bottom ul {
   list-style: none;
   gap: 24px;
+}
+@media (max-width: 480px) {
+  .footer-bottom ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start !important;
+  }
 }
 .footer-bottom ul a {
   font-family: "Axiforma", sans-serif;

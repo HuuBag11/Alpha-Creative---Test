@@ -1051,6 +1051,11 @@ button {
   color: #444444;
   margin-bottom: 16px;
 }
+.footer-contact form {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 @media (max-width: 768px) {
   .footer-contact form {
     display: flex;
@@ -1095,6 +1100,7 @@ button {
   width: 48px;
   height: 48px;
   transition: all 0.4s ease;
+  position: relative;
 }
 .footer-contact form button:hover {
   background-color: #890003;
@@ -1102,6 +1108,10 @@ button {
 .footer-contact form button svg {
   width: 18px;
   height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(53%, -50%);
 }
 .footer-contact span {
   display: block;

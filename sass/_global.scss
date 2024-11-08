@@ -42,7 +42,7 @@ button {
     @include flex(center,center);
     width: max-content;
     @include typo($font-primary, 16px, 600, 150%, $color-white);
-    padding: 12px 18px 10px;
+    padding: 12px 18px;
     border-radius: 100px;
     transition: all 0.4s ease;
 

@@ -5,7 +5,7 @@ $(document).ready(function () {
   slideBanner();
   scrollHeader();
   counterOnScroll();
-  activeNavLink();
+  toggleSubmenuMoble();
 });
 
 function slideBanner() {
@@ -120,77 +120,77 @@ function counterOnScroll(){
   });
 }
 
-function activeNavLink() {
-  let sections = document.querySelectorAll('section');
-  const headerHeight = document.querySelector('header').offsetHeight;
+// function activeNavLink() {
+//   let sections = document.querySelectorAll('section');
+//   const headerHeight = document.querySelector('header').offsetHeight;
 
-  window.onscroll = () => {
-    let fromTop = window.scrollY + window.innerHeight / 2;
+//   window.onscroll = () => {
+//     let fromTop = window.scrollY + window.innerHeight / 2;
 
-      sections.forEach(sec => {
-          let sectionTop = sec.offsetTop;
-          let sectionHeight = sec.offsetHeight;
-          let id = sec.getAttribute('id');
+//       sections.forEach(sec => {
+//           let sectionTop = sec.offsetTop;
+//           let sectionHeight = sec.offsetHeight;
+//           let id = sec.getAttribute('id');
 
-          if (fromTop >= sectionTop && fromTop < sectionTop + sectionHeight) {
-              let targetNavLink;
-              let targetPopupLink;
+//           if (fromTop >= sectionTop && fromTop < sectionTop + sectionHeight) {
+//               let targetNavLink;
+//               let targetPopupLink;
               
-              if (id === 'sectionHome') {
-                  targetNavLink = document.querySelector('header .menu-list a[href="#"]');
+//               if (id === 'sectionHome') {
+//                   targetNavLink = document.querySelector('header .menu-list a[href="#"]');
 
-              } else {
-                  targetNavLink = document.querySelector(`header .menu-list a[href="#${id}"]`);
-                  targetPopupLink = document.querySelector(`#menu-popup a[href="#${id}"]`);
-              }
+//               } else {
+//                   targetNavLink = document.querySelector(`header .menu-list a[href="#${id}"]`);
+//                   targetPopupLink = document.querySelector(`#menu-popup a[href="#${id}"]`);
+//               }
 
-              if (targetNavLink) {
-                  let parentMenuItem = targetNavLink.closest('header .menu-list__item');
+//               if (targetNavLink) {
+//                   let parentMenuItem = targetNavLink.closest('header .menu-list__item');
                   
-                  if (parentMenuItem) {
-                      document.querySelectorAll('header .menu-list__item').forEach(item => {
-                          item.classList.remove('active');
-                      });
+//                   if (parentMenuItem) {
+//                       document.querySelectorAll('header .menu-list__item').forEach(item => {
+//                           item.classList.remove('active');
+//                       });
 
-                      parentMenuItem.classList.add('active');
-                  }
-              }
+//                       parentMenuItem.classList.add('active');
+//                   }
+//               }
 
-              if (targetPopupLink) {
-                  let parentMenuPopup = targetPopupLink.closest("li");
+//               if (targetPopupLink) {
+//                   let parentMenuPopup = targetPopupLink.closest("li");
                   
-                  if (parentMenuPopup) {
-                      parentMenuPopup = parentMenuPopup.querySelector("a");
+//                   if (parentMenuPopup) {
+//                       parentMenuPopup = parentMenuPopup.querySelector("a");
 
-                      document.querySelectorAll('#menu-popup li a').forEach(item => {
-                          item.classList.remove('active');
-                      });
+//                       document.querySelectorAll('#menu-popup li a').forEach(item => {
+//                           item.classList.remove('active');
+//                       });
 
-                      parentMenuPopup.classList.add('active');
-                  }
-              }
-          }
-      });
-  };
+//                       parentMenuPopup.classList.add('active');
+//                   }
+//               }
+//           }
+//       });
+//   };
 
-  document.querySelectorAll('header .menu-list a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+//   document.querySelectorAll('header .menu-list a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function(e) {
+//         e.preventDefault();
 
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+//         const targetId = this.getAttribute('href');
+//         const targetSection = document.querySelector(targetId);
 
-        if (targetSection) {
-            const targetPosition = targetSection.offsetTop - headerHeight;
+//         if (targetSection) {
+//             const targetPosition = targetSection.offsetTop - headerHeight;
 
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-}
+//             window.scrollTo({
+//                 top: targetPosition,
+//                 behavior: 'smooth'
+//             });
+//         }
+//     });
+// });
+// }
 
 function togglePopupHeader(event){
   event.preventDefault();
@@ -202,4 +202,24 @@ function togglePopupHeader(event){
 
   let menuMobile = $("header .header-wrapper__bottom");
   menuMobile.toggleClass("show");
+}
+
+
+function toggleSubmenuMoble(){
+  if($(window).width() > 768) return;
+
+  $(".menu-list__item.menu-item-has-children .arrow").on("click", function(e){
+    e.preventDefault();
+
+    $(this).closest(".menu-item-has-children").find(".sub-menu");
+
+    let submenu = $(this).closest(".menu-item-has-children").find(".sub-menu");
+    submenu.toggleClass("open");
+    
+    if (submenu.hasClass("open")) {
+      submenu.css("height", submenu.get(0).scrollHeight);  // Expand to natural height
+    } else {
+        submenu.css("height", 0);  // Collapse to height 0
+    }
+  })
 }

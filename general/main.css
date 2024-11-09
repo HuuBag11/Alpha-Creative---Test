@@ -425,14 +425,6 @@ button {
 .header-wrapper__bottom .menu-list > li > a {
   display: block;
 }
-@media (max-width: 768px) {
-  .header-wrapper__bottom .menu-list > li:last-child a {
-    padding-bottom: 0;
-  }
-  .header-wrapper__bottom .menu-list > li:last-child .sub-menu {
-    margin-top: 10px;
-  }
-}
 .header-wrapper__bottom .menu-list li.active > a {
   color: #B70004;
 }
@@ -517,7 +509,7 @@ button {
 }
 @media (max-width: 768px) {
   .header-wrapper__bottom .menu-button {
-    margin-top: 32px;
+    margin-top: 22px;
   }
 }
 

@@ -68,6 +68,12 @@
                     cursor: pointer;
                     transition: all 0.4s ease;
 
+                    a{
+                        &:hover{
+                            color: $color-white !important;
+                        }
+                    }
+
                     &:hover{
                         color: $color-white;
                     }
@@ -282,6 +288,10 @@
                             display: flex;
                             align-items: center;
                             gap: 7px;
+
+                            &:hover{
+                                color: $color-white !important;
+                            }
                         }
 
                         .arrow{

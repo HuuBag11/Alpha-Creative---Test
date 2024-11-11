@@ -100,7 +100,7 @@ button {
 }
 .btn-custom.btn--secondary:hover {
   background-color: #FFF;
-  color: #000;
+  color: #000 !important;
 }
 .btn-custom.btn--primary {
   background-color: #B70004;
@@ -114,7 +114,7 @@ button {
   border: 1px solid #CCCCCC;
 }
 .btn-custom.btn--third:hover {
-  color: #FFF;
+  color: #FFF !important;
   background-color: #000;
   border: 1px solid #000;
 }
@@ -250,6 +250,9 @@ button {
 .header-wrapper__translate ul li {
   cursor: pointer;
   transition: all 0.4s ease;
+}
+.header-wrapper__translate ul li a:hover {
+  color: #FFF !important;
 }
 .header-wrapper__translate ul li:hover {
   color: #FFF;
@@ -441,6 +444,9 @@ button {
   display: flex;
   align-items: center;
   gap: 7px;
+}
+.header-wrapper__bottom .menu-list li.menu-item-has-children > a:hover {
+  color: #FFF !important;
 }
 .header-wrapper__bottom .menu-list li.menu-item-has-children .arrow {
   transition: all 0.4s ease;

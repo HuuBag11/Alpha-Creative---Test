@@ -54,14 +54,16 @@
         }
 
         &__translate{
+            position: relative;
             ul{
                 list-style: none;
-                gap: 8px;
+                gap: 0;
                 line-height: 150%;
                 color: $gray-color;
 
                 @media (max-width: 768px){
                     padding-left: 0;
+                    transform: translateX(-6px);
                 }
 
                 li{
@@ -69,8 +71,14 @@
                     transition: all 0.4s ease;
 
                     a{
+                        padding: 0 4px;
+                        transition: all 0.4s ease;
                         &:hover{
                             color: $color-white !important;
+                        }
+
+                        @media (max-width: 768px){
+                            padding: 0 6px;
                         }
                     }
 
@@ -83,7 +91,7 @@
                     }
 
                     @media (max-width: 768px){
-                        display: none;
+                        // display: none;
 
                         &.active{
                             display: block;
@@ -95,6 +103,11 @@
 
         &__form{
             display: none;
+            form{
+                display: flex;
+                align-items: center;
+            }
+
             &.mobile{
                 display: none;
             }
@@ -250,6 +263,8 @@
 
             &.show{
                 transform: translateX(0);
+                max-height: calc(100vh - 88px);
+                overflow-y: scroll;
             }
 
             .menu-list{
@@ -277,8 +292,13 @@
                     a{
                         color: $color-white;
                         font-weight: bold;
+                        font-family: $font-primary-bold;
                         transition: all 0.4s ease;
                         padding: 10px 0;
+
+                        &:hover{
+                            color: $color-white !important;
+                        }
                     }
 
                     &.menu-item-has-children{
@@ -359,7 +379,7 @@
                             
                             &:hover{
                                 font-weight: 700;
-                                color: $color-black;
+                                color: $color-black !important;
 
                                 @media (max-width: 768px){
                                     color: $color-white;

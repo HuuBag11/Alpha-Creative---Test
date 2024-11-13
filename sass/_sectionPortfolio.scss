@@ -2,7 +2,7 @@
     background-color: $color-earthy;
     
     .title{
-        @include typo($font-primary, 40px, 700, 120%, $color-black);
+        @include typo($font-primary-bold, 40px, 700, 120%, $color-black);
         margin-bottom: 120px;
         max-width: 60%;
 
@@ -75,9 +75,14 @@
             .text{
                 font-size: 24px;
                 font-weight: 700;
+                font-family: $font-primary-bold;
                 line-height: 140%;
                 color: $gray-color;
             }
         }
+    }
+
+    &__cta{
+        margin-top: 64px;
     }
 }

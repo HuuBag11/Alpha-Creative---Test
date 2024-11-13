@@ -11,9 +11,11 @@ $(document).ready(function () {
 function slideBanner() {
   let slideBanner = $(".section-banner__slide");
 
-  if (slideBanner.length) {
-    new Splide(slideBanner[0], {
-      type: "loop",
+  const destroy = $(".section-banner__slide .splide__slide").length < 2
+
+  if (slideBanner.length && !destroy) {
+    let splideInstance = new Splide(slideBanner[0], {
+      type: "slide",
       perPage: 1,
       interval: 6000,
       arrows: false,
@@ -21,8 +23,14 @@ function slideBanner() {
       autoplay: false,
       speed: 2000,
       pauseOnHover: true,
-      pauseonFocus: true
+      pauseonFocus: true,
+      destroy: destroy
     }).mount();
+  }
+  else{
+    if (slideBanner.splide) {
+      slideBanner.splide.destroy();
+    }
   }
 }
 

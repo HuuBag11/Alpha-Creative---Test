@@ -27,7 +27,7 @@ button {
 }
 
 .section-title{
-    @include typo($font-primary, 40px, 700, 120%, $color-black);
+    @include typo($font-primary-bold, 40px, 700, 120%, $color-black);
 
     @media (max-width: 768px){
         font-size: 32px;
@@ -41,8 +41,10 @@ button {
 .btn-custom{
     @include flex(center,center);
     width: max-content;
+    max-width: 100%;
+    text-align: center;
     @include typo($font-primary, 16px, 600, 150%, $color-white);
-    padding: 12px 18px 10px;
+    padding: 12px 18px 13px;
     border-radius: 100px;
     transition: all 0.4s ease;
 
@@ -61,6 +63,7 @@ button {
 
         &:hover{
             background-color: $secondary-color;
+            color: $color-white !important;
         }
     }
 

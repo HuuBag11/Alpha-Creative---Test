@@ -39,7 +39,7 @@ img {
 }
 
 body {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   line-height: 150%;
   scroll-behavior: smooth;
@@ -52,7 +52,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
 }
 
 .section-wrapper {
@@ -65,7 +65,7 @@ button {
 }
 
 .section-title {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Bold";
   font-size: 40px;
   font-weight: 700;
   line-height: 120%;
@@ -86,12 +86,14 @@ button {
   justify-content: center;
   align-items: center;
   width: max-content;
-  font-family: "Axiforma", sans-serif;
+  max-width: 100%;
+  text-align: center;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
   color: #FFF;
-  padding: 12px 18px 10px;
+  padding: 12px 18px 13px;
   border-radius: 100px;
   transition: all 0.4s ease;
 }
@@ -108,6 +110,7 @@ button {
 }
 .btn-custom.btn--primary:hover {
   background-color: #890003;
+  color: #FFF !important;
 }
 .btn-custom.btn--third {
   color: #000;
@@ -150,7 +153,7 @@ button {
   transition: 0s;
 }
 .section-desc {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 26px;
   font-weight: 400;
   line-height: 100%;
@@ -236,23 +239,36 @@ button {
     width: 100%;
   }
 }
+.header-wrapper__translate {
+  position: relative;
+}
 .header-wrapper__translate ul {
   list-style: none;
-  gap: 8px;
+  gap: 0;
   line-height: 150%;
   color: #444444;
 }
 @media (max-width: 768px) {
   .header-wrapper__translate ul {
     padding-left: 0;
+    transform: translateX(-6px);
   }
 }
 .header-wrapper__translate ul li {
   cursor: pointer;
   transition: all 0.4s ease;
 }
+.header-wrapper__translate ul li a {
+  padding: 0 4px;
+  transition: all 0.4s ease;
+}
 .header-wrapper__translate ul li a:hover {
   color: #FFF !important;
+}
+@media (max-width: 768px) {
+  .header-wrapper__translate ul li a {
+    padding: 0 6px;
+  }
 }
 .header-wrapper__translate ul li:hover {
   color: #FFF;
@@ -261,15 +277,16 @@ button {
   color: #FFF;
 }
 @media (max-width: 768px) {
-  .header-wrapper__translate ul li {
-    display: none;
-  }
   .header-wrapper__translate ul li.active {
     display: block;
   }
 }
 .header-wrapper__form {
   display: none;
+}
+.header-wrapper__form form {
+  display: flex;
+  align-items: center;
 }
 .header-wrapper__form.mobile {
   display: none;
@@ -412,6 +429,8 @@ button {
 }
 .header-wrapper__bottom.show {
   transform: translateX(0);
+  max-height: calc(100vh - 88px);
+  overflow-y: scroll;
 }
 .header-wrapper__bottom .menu-list {
   list-style: none;
@@ -434,8 +453,12 @@ button {
 .header-wrapper__bottom .menu-list li a {
   color: #FFF;
   font-weight: bold;
+  font-family: "Axiforma-Bold";
   transition: all 0.4s ease;
   padding: 10px 0;
+}
+.header-wrapper__bottom .menu-list li a:hover {
+  color: #FFF !important;
 }
 .header-wrapper__bottom .menu-list li.menu-item-has-children {
   position: relative;
@@ -502,7 +525,7 @@ button {
 }
 .header-wrapper__bottom .menu-list li .sub-menu a:hover {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 @media (max-width: 768px) {
   .header-wrapper__bottom .menu-list li .sub-menu a:hover {
@@ -519,6 +542,9 @@ button {
   }
 }
 
+.section-banner .slide:not(.is-active) .content-wrapper__content {
+  opacity: 1 !important;
+}
 .section-banner .content-wrapper {
   width: 100%;
   height: 100%;
@@ -573,6 +599,7 @@ button {
   font-weight: bold;
   margin-bottom: 16px;
   color: #FFF;
+  font-family: "Axiforma-Bold";
 }
 @media (max-width: 768px) {
   .section-banner .content-wrapper .title {
@@ -608,6 +635,7 @@ button {
 .section-banner .splide__slide {
   height: calc(100vh - 160px);
   min-height: 600px;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .section-banner .splide__slide {
@@ -631,7 +659,7 @@ button {
   background-color: #F1EEE8;
 }
 .section-portfolio .title {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Bold";
   font-size: 40px;
   font-weight: 700;
   line-height: 120%;
@@ -704,8 +732,12 @@ button {
 .section-portfolio__number .number__item .text {
   font-size: 24px;
   font-weight: 700;
+  font-family: "Axiforma-Bold";
   line-height: 140%;
   color: #444444;
+}
+.section-portfolio__cta {
+  margin-top: 64px;
 }
 
 .section-blog {
@@ -762,7 +794,7 @@ button {
 }
 .section-blog .blog__item .item-tag {
   padding: 24px;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 20px;
   font-weight: 600;
   line-height: 150%;
@@ -772,6 +804,10 @@ button {
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
+}
+.section-blog .blog__item .item-image a {
+  width: 100%;
+  height: 100%;
 }
 .section-blog .blog__item .item-image img {
   width: 100%;
@@ -786,7 +822,7 @@ button {
   padding: 24px;
 }
 .section-blog .blog__item .item-title {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Bold";
   font-size: 20px;
   font-weight: 700;
   line-height: 140%;
@@ -797,7 +833,7 @@ button {
   position: relative;
 }
 .section-blog .blog__item .item-desc {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
@@ -847,14 +883,14 @@ button {
   }
 }
 .section-team .team__item .item-name {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 20px;
   font-weight: 600;
   line-height: 150%;
   color: #FFF;
 }
 .section-team .team__item .item-info {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -934,7 +970,7 @@ button {
   }
 }
 .section-info__content .desc {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
@@ -970,7 +1006,7 @@ button {
   }
 }
 .section-cta .title {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Bold";
   font-size: 48px;
   font-weight: 700;
   line-height: 120%;
@@ -1023,7 +1059,7 @@ button {
   margin-bottom: 24px;
 }
 .footer-info__item span {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -1034,7 +1070,7 @@ button {
 .footer-info__item ul {
   padding-left: 0;
   list-style: none;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -1069,7 +1105,7 @@ button {
   }
 }
 .footer-menu .menu .menu-item > a {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -1088,7 +1124,7 @@ button {
   margin-bottom: 12px;
 }
 .footer-menu .menu ul a {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
@@ -1122,7 +1158,7 @@ button {
   margin-top: 40px;
 }
 .footer-contact .title {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -1150,7 +1186,7 @@ button {
   border-radius: 4px;
   overflow: hidden;
   background-color: #FFF;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -1194,7 +1230,7 @@ button {
 .footer-contact span {
   display: block;
   margin-top: 16px;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 12px;
   font-weight: 400;
   line-height: 150%;
@@ -1259,7 +1295,7 @@ button {
   }
 }
 .footer-bottom ul a {
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma-Regular";
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
